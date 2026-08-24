@@ -20,6 +20,7 @@
  */
 
 # include  <string>
+# include  <cstdint>
 
 # include  "config.h"
 #ifdef HAVE_IOSFWD
