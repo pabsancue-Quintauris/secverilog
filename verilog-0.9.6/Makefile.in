@@ -228,7 +228,8 @@ parse.o: parse.cc
 parse.cc: $(srcdir)/parse.y
 	$(YACC) --verbose -t -p VL -d -o $@ $<
 parse.h: parse.cc
-	mv parse.cc.h parse.h 2>/dev/null || mv parse.hh parse.h
+	mv parse.cc.h parse.h 2>/dev/null || mv parse.hh parse.h 2>/dev/null || true
+	cp -f parse.h parse.hh
 
 syn-rules.cc: $(srcdir)/syn-rules.y
 	$(YACC) --verbose -t -p syn_ -o $@ $<

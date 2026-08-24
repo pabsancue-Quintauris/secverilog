@@ -167,7 +167,7 @@ ostream& operator << (ostream&, const PExpr&);
 class ExprComparator
 {
 public:
-    bool operator()(const PExpr* e1, const PExpr* e2)
+    bool operator()(const PExpr* e1, const PExpr* e2) const
     {
         return e1->get_name() < e2->get_name();
     }

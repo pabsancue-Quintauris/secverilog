@@ -214,11 +214,11 @@ AC_CHECK_FUNCS(fopen64)
 # in the default libraries first and then look in -lm for them. On some
 # systems we may need to use the compiler in C99 mode to get a definition.
 # We requested C99 mode earlier with AC_PROG_CC_C99.
-AC_SEARCH_LIBS([lround], [m], [AC_DEFINE([HAVE_LROUND], [1])])
-AC_SEARCH_LIBS([llround], [m], [AC_DEFINE([HAVE_LLROUND], [1])])
-AC_SEARCH_LIBS([nan], [m], [AC_DEFINE([HAVE_NAN], [1])])
-AC_SEARCH_LIBS([fmin], [m], [AC_DEFINE([HAVE_FMIN], [1])])
-AC_SEARCH_LIBS([fmax], [m], [AC_DEFINE([HAVE_FMAX], [1])])
+AC_SEARCH_LIBS([lround], [m], [AC_DEFINE([HAVE_LROUND], [1], [Define if lround is available])])
+AC_SEARCH_LIBS([llround], [m], [AC_DEFINE([HAVE_LLROUND], [1], [Define if llround is available])])
+AC_SEARCH_LIBS([nan], [m], [AC_DEFINE([HAVE_NAN], [1], [Define if nan is available])])
+AC_SEARCH_LIBS([fmin], [m], [AC_DEFINE([HAVE_FMIN], [1], [Define if fmin is available])])
+AC_SEARCH_LIBS([fmax], [m], [AC_DEFINE([HAVE_FMAX], [1], [Define if fmax is available])])
 
 # Check to see if an unsigned long and uint64_t are the same from
 # a compiler perspective. We can not just check that they are the
@@ -243,7 +243,7 @@ uint64_t uival = 1;
 result &= check(uival);
 return !result;]])],
    [AC_MSG_RESULT(no)],
-   [AC_DEFINE([UINT64_T_AND_ULONG_SAME], [1]) AC_MSG_RESULT(yes)])
+   [AC_DEFINE([UINT64_T_AND_ULONG_SAME], [1], [Define if uint64_t and unsigned long are the same type]) AC_MSG_RESULT(yes)])
 
 # Linker option used when compiling the target
 AX_LD_RDYNAMIC
