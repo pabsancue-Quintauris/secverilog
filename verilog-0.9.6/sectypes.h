@@ -489,7 +489,7 @@ struct Hypothesis {
 class HypothesisComparator
 {
 public:
-    bool operator()(const Hypothesis* h1, const Hypothesis* h2)
+    bool operator()(const Hypothesis* h1, const Hypothesis* h2) const
     {
         return h1->bexpr_->get_name() < h2->bexpr_->get_name();
     }

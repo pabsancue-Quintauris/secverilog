@@ -44,7 +44,7 @@ MAN = @MAN@
 PS2PDF = @PS2PDF@
 
 CPPFLAGS = -I. -I.. -I$(srcdir)/.. -I$(srcdir) @CPPFLAGS@ @DEFS@
-CFLAGS = @WARNING_FLAGS@ @CFLAGS@
+CFLAGS = @WARNING_FLAGS@ @CFLAGS@ -fcommon
 LDFLAGS = @LDFLAGS@
 
 all: dep iverilog@EXEEXT@ iverilog.man
